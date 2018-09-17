@@ -69,6 +69,6 @@ class PlatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plate_params
-      params.require(:plate).permit(:descricao, :preco, :tempopreparo)
+      params.require(:plate).permit(:descricao, :preco, :tempopreparo, :restaurant_id, :ingredient_id)
     end
 end
