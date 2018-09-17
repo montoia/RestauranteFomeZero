@@ -4,7 +4,8 @@ class PlatesController < ApplicationController
   # GET /plates
   # GET /plates.json
   def index
-    @plates = Plate.all
+   # @plates = Plate.all
+    @plates = Plate.order(:descricao)
   end
 
   # GET /plates/1
@@ -69,6 +70,6 @@ class PlatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plate_params
-      params.require(:plate).permit(:restaurant_id, :ingredient_id, :descricao, :preco, :tempopreparo)
+      params.require(:plate).permit(:restaurant_id, {ingredient_ids: []}, :descricao, :preco, :tempopreparo)
     end
 end

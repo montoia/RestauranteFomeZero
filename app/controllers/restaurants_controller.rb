@@ -7,6 +7,10 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
+  #def homepage
+    # @restaurants = Plate.order(:descricao)
+  #end
+
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
