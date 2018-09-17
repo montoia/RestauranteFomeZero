@@ -1,0 +1,2 @@
+module AddRestaurantIdToPlatesHelper
+end

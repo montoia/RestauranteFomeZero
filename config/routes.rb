@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :add_restaurant_id_to_plates
   resources :ingredients
   resources :plates
   resources :restaurants

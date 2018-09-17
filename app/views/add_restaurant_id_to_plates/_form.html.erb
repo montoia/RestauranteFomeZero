@@ -1,0 +1,22 @@
+<%= form_with(model: add_restaurant_id_to_plate, local: true) do |form| %>
+  <% if add_restaurant_id_to_plate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(add_restaurant_id_to_plate.errors.count, "error") %> prohibited this add_restaurant_id_to_plate from being saved:</h2>
+
+      <ul>
+      <% add_restaurant_id_to_plate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :restaurant_id %>
+    <%= form.number_field :restaurant_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
