@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  preco: 9.99
+  tempopreparo: 2018-09-16 22:48:37
+
+two:
+  descricao: MyString
+  preco: 9.99
+  tempopreparo: 2018-09-16 22:48:37
