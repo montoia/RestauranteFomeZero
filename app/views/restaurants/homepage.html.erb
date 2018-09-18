@@ -1,29 +1,31 @@
 <p id="notice"><%= notice %></p>
+  <div id="restaurante">
+    <% @restaurants.each do |restaurant| %>
+        <h1 class="nome"><%= restaurant.nome %></h1>
+        <h2 class="endereco"><%= restaurant.endereco %></h2>
+        <h2 class="telefone">Telefone: <%= restaurant.telefone %></h2>
+    <% end %>
+  </div>
 
-<h1>Homepage</h1>
+  <div id="plates">
+    <!--%= debug @plates%-->
+    <ul class="plates_itens">
+       <% @plates.each do |plate| %>
+       <li class="plate_item">
+          <div class="titulo">
+            <div class="descricao"><%= plate.descricao %></div>
+            <div class="preco">R$ <b><%= plate.preco %></b></div>
+          </div>
 
-<table>
-  <thead>
-  <tr>
-    <th>Descricao</th>
-    <th>Preco</th>
-    <th>Tempopreparo</th>
-    <th>Ingredients</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+           <div class="info">
 
-  <tbody>
-  <% @plates.each do |plate| %>
-    <tr>
-      <td><%= plate.descricao %></td>
-      <td><%= plate.preco %></td>
-      <td><%= plate.tempopreparo %></td>
-      <td><%= plate.ingredients.map(&:descricao).join(',') %>
+             <div class="ingredientes">Ingredientes:<span><br/><%= plate.ingredients.map(&:descricao).join(',') %></span></div>
+             <div class="tempopreparo"> Tempo de Preparo: <%= plate.tempopreparo.strftime("%I:%M") %>h</div>
+           </div>
 
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br>
+            <div class="fotos">FOTO</div>
+         <!--div class="ingredientes">Ingredients: <!--%= plate.ingredients.sort_by { |h | h[:descricao] } %></div-->
+       </li>
+      <% end %>
+    </ul>
+</div>

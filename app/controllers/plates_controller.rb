@@ -16,6 +16,7 @@ class PlatesController < ApplicationController
   # GET /plates/new
   def new
     @plate = Plate.new
+
   end
 
   # GET /plates/1/edit

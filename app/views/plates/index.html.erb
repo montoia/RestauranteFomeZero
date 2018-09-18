@@ -1,33 +1,32 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Plates</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Descricao</th>
-      <th>Preco</th>
-      <th>Tempopreparo</th>
-      <th>Ingredients</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @plates.each do |plate| %>
+  <h1>Plates</h1>
+  <table>
+    <thead>
       <tr>
-        <td><%= plate.descricao %></td>
-        <td><%= plate.preco %></td>
-        <td><%= plate.tempopreparo %></td>
-        <td><%= plate.ingredients.map(&:descricao).join(',') %>
-        <td><%= link_to 'Show', plate %></td>
-        <td><%= link_to 'Edit', edit_plate_path(plate) %></td>
-        <td><%= link_to 'Destroy', plate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Descricao</th>
+        <th>Preco</th>
+        <th>Tempopreparo</th>
+        <th>Ingredients</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @plates.each do |plate| %>
+        <tr>
+          <td><%= plate.descricao %></td>
+          <td><%= plate.preco %></td>
+          <td><%= plate.tempopreparo.strftime("%I:%M") %></td>
+          <td><%= plate.ingredients.map(&:descricao).join(',') %>
+          <td><%= link_to 'Show', plate %></td>
+          <td><%= link_to 'Edit', edit_plate_path(plate) %></td>
+          <td><%= link_to 'Destroy', plate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Plate', new_plate_path %>
+  <br>
+
+  <%= link_to 'New Plate', new_plate_path %>
+

@@ -11,6 +11,12 @@ class RestaurantsController < ApplicationController
     # @restaurants = Plate.order(:descricao)
   #end
 
+  def homepage
+    @plates = Plate.order(:descricao)
+    @restaurants = Restaurant.all
+    @ingredients = Ingredient.order(:descricao)
+  end
+
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
