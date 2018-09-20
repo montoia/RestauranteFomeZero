@@ -12,17 +12,26 @@
     <ul class="plates_itens">
        <% @plates.each do |plate| %>
        <li class="plate_item">
+
           <div class="titulo">
             <div class="descricao"><%= plate.descricao %></div>
-            <div class="preco">R$ <b><%= plate.preco %></b></div>
+            <div class="preco">R$ <b><%= plate.preco %>0</b></div>
           </div>
 
            <div class="info">
+             <div class="ingredientes">Ingredientes:
+               <span><br/>
+                   <!--%= plate.ingredients.map(&:descricao).join(',') %-->
+                 <ul>
+                    <% plate.ingredients.order(:descricao).each do | ingredient| %>
+                    <li><%= ingredient.descricao%></li>
+                    <% end %>
+                 </ul>
+                 </span>
+             </div>
 
-             <div class="ingredientes">Ingredientes:<span><br/><%= plate.ingredients.map(&:descricao).join(',') %></span></div>
-             <div class="tempopreparo"> Tempo de Preparo: <%= plate.tempopreparo.strftime("%I:%M") %>h</div>
+             <div class="tempopreparo"><b>Tempo de Preparo:</b> <%= plate.tempopreparo.strftime("%I:%M") %>h</div>
            </div>
-
             <div class="fotos">FOTO</div>
          <!--div class="ingredientes">Ingredients: <!--%= plate.ingredients.sort_by { |h | h[:descricao] } %></div-->
        </li>

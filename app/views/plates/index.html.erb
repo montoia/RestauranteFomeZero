@@ -17,7 +17,9 @@
           <td><%= plate.descricao %></td>
           <td><%= plate.preco %></td>
           <td><%= plate.tempopreparo.strftime("%I:%M") %></td>
-          <td><%= plate.ingredients.map(&:descricao).join(',') %>
+          <td><% plate.ingredients.order(:descricao).each do | ingredient| %>
+              <%= ingredient.descricao%> |
+              <% end %>
           <td><%= link_to 'Show', plate %></td>
           <td><%= link_to 'Edit', edit_plate_path(plate) %></td>
           <td><%= link_to 'Destroy', plate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
