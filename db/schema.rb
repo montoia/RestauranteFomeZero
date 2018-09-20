@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_09_17_165714) do
 
   create_table "plates", force: :cascade do |t|
     t.string "descricao"
-    t.decimal "preco"
+    t.decimal "preco", precision: 10, scale: 2
     t.time "tempopreparo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

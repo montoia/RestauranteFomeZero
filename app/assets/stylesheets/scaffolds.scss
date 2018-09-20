@@ -82,3 +82,24 @@ div {
 label {
   display: block;
 }
+/* MENU */
+/* MENU */
+ul.menu_itens {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li.menu_item{
+  display: inline;
+  float: left;
+  font-size: 20px;
+}
+
+li.menu_item a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
